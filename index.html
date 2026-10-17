@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Is Everything Fucked?</title>
   <style>
+    
     html, body {
       margin: 0;
       padding: 0;
@@ -15,7 +16,6 @@
         linear-gradient(90deg, transparent 4px, rgba(255,255,255,0.02) 4px),
         linear-gradient(0deg, transparent 4px, rgba(255,255,255,0.02) 4px);
       background-size: 5px 5px;
-      transform: scaleX(0.94);
       display: flex;
 justify-content: center;
 align-items: center;
@@ -29,6 +29,7 @@ align-items: center;
       align-items: center;
       text-align: center;
       user-select: none;
+      transform: scaleX(0.94);
       transform-origin: center;
     }
 
@@ -81,7 +82,7 @@ align-items: center;
 
 .answer-block {
   font-family: 'Impact', 'Arial Black', sans-serif;
-  color: #E22525;
+  color: #ff0000;
   font-size: clamp(180px, 26vw, 340px);
   font-weight: 900;
   text-transform: uppercase;
@@ -96,22 +97,45 @@ align-items: center;
 }
 
 
-    .email-link {
-      display: inline-block;
-      position: relative;
-      z-index: 10;
-      margin-top: 30px;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      color: #E22525;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
 
-    .email-link:hover {
-      color: #FFFFFF;
-      text-decoration: underline;
-    }
+.email-link {
+    position: fixed;
+    top: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    
+    /* Modern, premium font selection */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;               
+    font-weight: 900;              
+    letter-spacing: 2px;          /* Pushes characters apart for a clean tech look */
+    color: #050505;                
+    text-decoration: none;
+    text-transform: uppercase;
+
+    /* Fixed spacing container layout */
+    background-color: #dfd007;     
+    padding: 12px 24px;           /* Adds more padding to make the box look intentional */
+    border-radius: 0px;           /* Completely sharp corners feel more modern here */
+    box-shadow: 4px 4px 0px #000000; /* Subtle geometric shadow layer to add depth */
+    
+    transition: all 0.2s ease;
+}
+
+.email-link:hover {
+    background-color: #FFFFFF;     
+    color: #050505;
+    box-shadow: 0px 0px 0px #000000; /* Flattens smoothly when hovered */
+    transform: translate(-50%, 2px); /* Physical click-down feedback effect */
+}
+
+
+/*.email-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
 
     /* Mobile Optimization Override */
 @media (max-width: 600px) {
@@ -142,22 +166,52 @@ align-items: center;
   }
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #080808;
+    z-index: 1000;
+
+}
+
+.grey-line {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #686464;
+    z-index: 1000;
+
+}
+
   </style>
 </head>
 <body>
+
+  <div class="top-bar"></div>
+  <div class="grey-line"></div>
+
+  <a class="email-link"
+     href="https://mail.google.com/mail/?view=cm&to=fuck%40everythingisfucked.wtf"
+     target="_blank"
+     rel="noopener noreferrer">
+    GOT QUESTIONS? EMAIL US.
+  </a>
 
   <main class="display-container">
     <h1 class="text-line line-gap">Is Everything</h1>
     <h1 class="text-line">Fucked?</h1>
 
     <div class="answer-block">Yes.</div>
-
-<a class="email-link"
-   href="https://mail.google.com/mail/?view=cm&to=fuck%40everythingisfucked.wtf"
-   target="_blank"
-   rel="noopener noreferrer">
-  GOT QUESTIONS? EMAIL US.
-</a>
 <!--
     <div style="background-color: #121214; border: 1px solid #222225; border-radius: 8px; padding: 20px; max-width: 400px; margin-top: 40px; text-align: left;">
 <h2 style="font-family: 'Impact', sans-serif; color: #D1D1D6; font-size: 22px; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">
