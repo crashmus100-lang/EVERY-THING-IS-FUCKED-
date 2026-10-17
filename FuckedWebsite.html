@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Everything Fucked?</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #050505;
+      background-image:
+        linear-gradient(90deg, transparent 4px, rgba(255,255,255,0.02) 4px),
+        linear-gradient(0deg, transparent 4px, rgba(255,255,255,0.02) 4px);
+      background-size: 5px 5px;
+      transform: scaleX(0.94);
+      display: flex;
+justify-content: center;
+align-items: center;
+
+    }
+
+    /* Core display wrapper */
+    .display-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+      transform-origin: center;
+    }
+
+    .text-line {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      color: #F6F6F6;
+      font-size: clamp(75px, 14vw, 140px);
+      font-weight: 90;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 0.88;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      transform: scaleX(1.1);
+      transform: scaleY(1.1);
+    }
+
+    .line-gap {
+      margin-bottom: 9px; 
+    }
+
+    .answer-block {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      color: #E22525;
+      font-size: clamp(180px, 26vw, 340px);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 0.90;
+      letter-spacing: 2px;
+      }
+
+@keyframes dynamicFlicker {
+  0%, 100% { opacity: 1; }
+  3% { opacity: 0.4; }
+  6% { opacity: 1; }
+  7% { opacity: 0.4; }
+  8% { opacity: 1; }
+  9% { opacity: 0.4; }
+  10% { opacity: 1; }
+  45% { opacity: 1; }
+  46% { opacity: 0.3; }
+  47% { opacity: 0.9; }
+  48% { opacity: 0.3; }
+  50% { opacity: 1; }
+  53% { opacity: 1; }
+  54% { opacity: 0.2; }
+  56% { opacity: 1; }
+}
+
+.answer-block {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  color: #E22525;
+  font-size: clamp(180px, 26vw, 340px);
+  font-weight: 90;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 0.90;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  transform: scaleX(0.84);
+  transform: scaleY(1.05);
+  transform-origin: center;
+  animation: dynamicFlicker 5s linear infinite;
+}
+
+
+    .email-link {
+      display: inline-block;
+      position: relative;
+      z-index: 10;
+      margin-top: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #E22525;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .email-link:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="display-container">
+    <h1 class="text-line line-gap">Is Everything</h1>
+    <h1 class="text-line">Fucked?</h1>
+
+    <div class="answer-block">Yes.</div>
+
+<a class="email-link"
+   href="https://mail.google.com/mail/?view=cm&to=fuck%40everythingisfucked.wtf"
+   target="_blank"
+   rel="noopener noreferrer">
+  GOT QUESTIONS? EMAIL US.
+</a>
+<!--
+    <div style="background-color: #121214; border: 1px solid #222225; border-radius: 8px; padding: 20px; max-width: 400px; margin-top: 40px; text-align: left;">
+<h2 style="font-family: 'Impact', sans-serif; color: #D1D1D6; font-size: 22px; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">
+  SYSTEM MONITOR
+</h2>
+
+      </h2>
+      <p style="font-family: Arial, sans-serif; color: #88888C; font-size: 14px; line-height: 1.5; margin: 0;">
+        Tracking anomalies and local climate shifts. Core framework initialized successfully.
+      </p>
+    </div>
+-->
+  </main>
+
+</body>
+</html>
