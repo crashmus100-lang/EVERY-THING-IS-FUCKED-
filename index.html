@@ -3,64 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Is Everything Fucked?</title>
+  <title>Everything Is Fucked</title>
   <style>
     
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #050505;
-      background-image:
-        linear-gradient(90deg, transparent 4px, rgba(255,255,255,0.02) 4px),
-        linear-gradient(0deg, transparent 4px, rgba(255,255,255,0.02) 4px);
-      background-size: 5px 5px;
-      display: flex;
-justify-content: center;
-align-items: center;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #050505;
+  background-image:
+    linear-gradient(90deg, transparent 4px, rgba(255,255,255,0.02) 4px),
+    linear-gradient(0deg, transparent 4px, rgba(255,255,255,0.02) 4px);
+  background-size: 5px 5px;
+  /* Standard vertical flow so everything stacks properly on scroll */
+  display: block; 
+}
 
-    }
+/* This outer wrapper anchors the giant text perfectly to the center of the viewport screen */
+.hero-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Forces it to fill exactly 100% of the screen height */
+  box-sizing: border-box;
+  padding-top: 60px; /* Accounts for the top-bar */
+}
 
-    /* Core display wrapper */
-    .display-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      user-select: none;
-      transform: scaleX(0.94);
-      transform-origin: center;
-    }
 
-    .text-line {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      color: #F6F6F6;
-      font-size: clamp(75px, 14vw, 140px);
-      font-weight: 700;
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 0.88;
-      letter-spacing: 2px;
-      white-space: nowrap;
-      transform: scaleX(1.1);
-      transform: scaleY(1.1);
-    }
 
-    .line-gap {
-      margin-bottom: 9px; 
-    }
 
-    .answer-block {
-      font-family: 'Impact', 'Arial Black', sans-serif;
-      color: #E22525;
-      font-size: clamp(180px, 26vw, 340px);
-      font-weight: 800;
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 0.90;
-      letter-spacing: 2px;
-      }
+.display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+  transform: scaleX(0.94);
+  transform-origin: center;
+  width: 100%;
+}
+
+.text-line {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  color: #F6F6F6;
+  font-size: clamp(75px, 14vw, 140px);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 0.88;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  transform: scaleX(1.1);
+  transform: scaleY(1.1);
+}
+
+.line-gap {
+  margin-bottom: 9px; 
+}
 
 @keyframes dynamicFlicker {
   0%, 100% { opacity: 1; }
@@ -96,66 +99,46 @@ align-items: center;
   animation: dynamicFlicker 5s linear infinite;
 }
 
-
-
 .email-link {
     position: fixed;
     top: 11px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001;
-    
-    /* Modern, premium font selection */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;               
     font-weight: 900;              
-    letter-spacing: 2px;          /* Pushes characters apart for a clean tech look */
+    letter-spacing: 2px;          
     color: #050505;                
     text-decoration: none;
     text-transform: uppercase;
-
-    /* Fixed spacing container layout */
     background-color: #dfd007;     
-    padding: 12px 24px;           /* Adds more padding to make the box look intentional */
-    border-radius: 0px;           /* Completely sharp corners feel more modern here */
-    box-shadow: 4px 4px 0px #000000; /* Subtle geometric shadow layer to add depth */
-    
+    padding: 12px 24px;           
+    border-radius: 0px;           
+    box-shadow: 4px 4px 0px #000000; 
     transition: all 0.2s ease;
 }
 
 .email-link:hover {
     background-color: #FFFFFF;     
     color: #050505;
-    box-shadow: 0px 0px 0px #000000; /* Flattens smoothly when hovered */
-    transform: translate(-50%, 2px); /* Physical click-down feedback effect */
+    box-shadow: 0px 0px 0px #000000; 
+    transform: translate(-50%, 2px); 
 }
 
-
-/*.email-link:hover {
-    color: #FFFFFF;
-    text-decoration: underline;
-}
-
-
-    /* Mobile Optimization Override */
 @media (max-width: 600px) {
   .display-container {
     max-width: 95vw;
   }
 
   .text-line {
-    /* Slightly smaller font sizing so it fits neatly across a vertical phone screen */
     font-size: clamp(45px, 12vw, 75px);
-    /* Removes the horizontal stretch on mobile so characters don't clip off the screen */
     transform: none; 
-    /* Allows the text to break into normal words instead of forcing one endless line */
     white-space: normal; 
   }
 
   .answer-block {
-    /* Scales down the giant YES to match a portrait phone viewport */
     font-size: clamp(110px, 25vw, 180px);
-    /* Keeps the vertical stretch but drops the horizontal squeeze so it reads clearly */
     transform: scaleY(1.05); 
     margin-top: 5px;
   }
@@ -166,11 +149,6 @@ align-items: center;
   }
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
 .top-bar {
     position: fixed;
     top: 0;
@@ -179,7 +157,6 @@ html, body {
     height: 60px;
     background-color: #080808;
     z-index: 1000;
-
 }
 
 .grey-line {
@@ -190,9 +167,7 @@ html, body {
     height: 1px;
     background-color: #686464;
     z-index: 1000;
-
 }
-
   </style>
 </head>
 <body>
@@ -201,34 +176,54 @@ html, body {
   <div class="grey-line"></div>
 
   <a class="email-link"
-     href="https://mail.google.com/mail/?view=cm&to=fuck%40everythingisfucked.wtf"
+     href="https://google.com"
      target="_blank"
      rel="noopener noreferrer">
     GOT QUESTIONS? EMAIL US.
   </a>
 
-  <main class="display-container">
-    <h1 class="text-line line-gap">Is Everything</h1>
-    <h1 class="text-line">Fucked?</h1>
+  <!-- This outer div perfectly centers your header content on load -->
+  <div class="hero-screen">
+    <main class="display-container">
+      <h1 class="text-line line-gap">Is Everything</h1>
+      <h1 class="text-line">Fucked?</h1>
+      <div class="answer-block">Yes.</div>
+      <p style="color: #ff0000; font-family: 'Impact', sans-serif; font-size: 16px; margin-top: 40px; letter-spacing: 3px;">SCROLL DOWN ↓</p>
+    </main> 
+  </div>
 
-    <div class="answer-block">Yes.</div>
-<!--
-    <div style="background-color: #121214; border: 1px solid #222225; border-radius: 8px; padding: 20px; max-width: 400px; margin-top: 40px; text-align: left;">
-<h2 style="font-family: 'Impact', sans-serif; color: #D1D1D6; font-size: 22px; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">
-  SYSTEM MONITOR
-</h2>
-
-      </h2>
-      <p style="font-family: Arial, sans-serif; color: #88888C; font-size: 14px; line-height: 1.5; margin: 0;">
-        Tracking anomalies and local climate shifts. Core framework initialized successfully.
-      </p>
-    </div>
-
+   <!-- Second Section (Scroll down past the first screen to see this) -->
+  <section style="width: 100%; max-width: 400px; margin: 60px auto 120px auto; padding: 0 20px; box-sizing: border-box;">
     
--->
+    <!-- WRAPPER LINK FOR THE ENTIRE BOX -->
+    <a href="https://www.amazon.se/-/en/Everything-cked-Book-about-Hope/dp/0062956566" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block;">
+      
+      <div style="background-color: #121214; border: 1px solid #222225; border-radius: 8px; padding: 20px; text-align: left; transition: transform 0.2s ease, border-color 0.2s ease;" 
+           onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='#333338';" 
+           onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#222225';">
+        
+        <h2 style="font-family: 'Impact', sans-serif; color: #D1D1D6; font-size: 22px; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px;">
+          EVERY THING IS FUCKED: THE BOOK.
+        </h2>
+        
+        <p style="font-family: Arial, sans-serif; color: #88888C; font-size: 14px; line-height: 1.5; margin: 0;">
+          Everything Is Fucked by Mark Manson is a blunt look at why we feel anxious and hopeless today despite living in the safest, wealthiest era in history, proving that our endless chase for comfort and artificial happiness is exactly what's making us miserable.
+        </p>
 
+        <img src="https://m.media-amazon.com/images/I/718N0ji7n5L._AC_UF1000,1000_QL80_.jpg" alt="Everything Is Fucked Book Cover" style="width: 100%; height: auto; border-radius: 4px; border: 1px solid #222225; margin-top: 15px; display: block;">
+        
+      </div>
+      
+    </a>
+  </section>
 
-  </main>
+    <!-- Disclaimer Footer -->
+  <footer style="width: 100%; max-width: 500px; margin: 0 auto 60px auto; padding: 0 20px; box-sizing: border-box; text-align: center;">
+    <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #444446; font-size: 11px; line-height: 1.6; letter-spacing: 0.5px; text-transform: uppercase;">
+      This website is not associated with Mark Manson what so ever, and does not receive any money if you purchase any thing on this website using our links, or an external one, this is simply just a funny haha.
+    </p>
+  </footer>
+
 
 </body>
 </html>
